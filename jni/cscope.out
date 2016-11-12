@@ -1,0 +1,3270 @@
+cscope 15 $HOME/Workspace/Android/MyApps/AMemLeakFinder/jni               0000016065
+	@backtrace.c
+
+1 
+	~<°dio.h
+>
+
+2 
+	~<°rög.h
+>
+
+3 
+	~<unwöd.h
+>
+
+4 
+	~<dlf˙.h
+>
+
+5 
+	~<™droid/log.h
+>
+
+6 
+	~"backåa˚.h
+"
+
+10 ** 
+	mcuºít
+;
+
+11 ** 
+	míd
+;
+
+12 } 
+	tBackåa˚Sèã
+;
+
+14 
+_Unwöd_Rós⁄_Code
+ 
+	$unwödCÆlback
+(
+_Unwöd_C⁄ãxt
+* 
+c⁄ãxt
+, * 
+¨g
+)
+
+16 
+Backåa˚Sèã
+* 
+°©e
+ = (Backåa˚Sèã *)
+¨g
+;
+
+18 i‡(
+°©e
+->
+cuºít
+ < sèã->
+íd
+) {
+
+20 * 
+ù
+ = (*)
+	`_Unwöd_GëIP
+(
+c⁄ãxt
+);
+
+22 i‡(
+ù
+) {
+
+23 *
+°©e
+->
+cuºít
+ = 
+ù
+;
+
+24 
+°©e
+->
+cuºít
+ += 1;
+
+25  
+_URC_NO_REASON
+;
+
+29  
+_URC_END_OF_STACK
+;
+
+30 
+	}
+}
+
+32 
+size_t
+ 
+	$ˇ±uªBackåa˚
+(**
+buf„r
+, 
+size_t
+ 
+cou¡
+)
+
+34 
+Backåa˚Sèã
+ 
+°©e
+ = {
+buf„r
+, buf„∏+ 
+cou¡
+};
+
+36 
+	`_Unwöd_Backåa˚
+(
+unwödCÆlback
+, &
+°©e
+);
+
+38  
+°©e
+.
+cuºít
+ - 
+buf„r
+;
+
+39 
+	}
+}
+
+41 
+size_t
+ 
+	$backåa˚
+(
+backåa˚_°ack_t
+ *
+°ack
+, 
+size_t
+ 
+max_dïth
+)
+
+43 *
+buf„r
+[
+MAX_BACKTRACE_DEPTH
+] = {
+NULL
+};
+
+44 i‡(!
+°ack
+)  0;
+
+46 i‡(
+max_dïth
+ > 
+MAX_BACKTRACE_DEPTH
+) {
+
+47 
+max_dïth
+ = 
+MAX_BACKTRACE_DEPTH
+;
+
+50 
+°ack
+->
+n
+ = 
+	`ˇ±uªBackåa˚
+(
+buf„r
+, 
+max_dïth
+);
+
+51 i‡(
+°ack
+->
+n
+ > 0) {
+
+52 
+°ack
+->
+ùs
+ = (**)
+	`mÆloc
+((*Ë* sèck->
+n
+);
+
+53 i‡(!
+°ack
+->
+ùs
+) {
+
+58 
+i
+ = 0; i < 
+°ack
+->
+n
+; ++i) {
+
+59 
+°ack
+->
+ùs
+[
+i
+] = 
+buf„r
+[i];
+
+62  
+°ack
+->
+n
+;
+
+63 
+	}
+}
+
+66 
+size_t
+ 
+	$backåa˚
+(
+backåa˚_symbﬁ_t
+ *
+symbﬁs
+, 
+size_t
+ 
+cou¡
+)
+
+68 
+size_t
+ 
+idx
+ = 0;
+
+69 
+size_t
+ 
+dïth
+ = 0;
+
+70 *
+buf„r
+[
+MAX_BACKTRACE_DEPTH
+] = {
+NULL
+};
+
+71 
+backåa˚_symbﬁ_t
+ *
+cuºít
+ = 
+symbﬁs
+;
+
+73 i‡(!
+cuºít
+) {
+
+77 i‡(
+cou¡
+ > 
+MAX_BACKTRACE_DEPTH
+) {
+
+78 
+cou¡
+ = 
+MAX_BACKTRACE_DEPTH
+;
+
+81 
+dïth
+ = 
+	`ˇ±uªBackåa˚
+(
+buf„r
+, 
+cou¡
+);
+
+83 
+idx
+ = 0; idx < 
+cou¡
+; ++idx, 
+cuºít
+++) {
+
+84 c⁄° * 
+addr
+ = 
+buf„r
+[
+idx
+];
+
+85 c⁄° * 
+symbﬁ
+ = "unknown";
+
+86 c⁄° * 
+m≠
+ = "unknown";
+
+88 i‡(!
+addr
+) {
+
+92 
+Dl_öfo
+ 
+öfo
+;
+
+93 i‡(
+	`dœddr
+(
+addr
+, &
+öfo
+)) {
+
+94 i‡(
+öfo
+.
+dli_‚ame
+) {
+
+95 
+m≠
+ = 
+öfo
+.
+dli_‚ame
+;
+
+97 i‡(
+öfo
+.
+dli_¢ame
+) {
+
+98 
+symbﬁ
+ = 
+öfo
+.
+dli_¢ame
+;
+
+102 
+cuºít
+->
+addr
+ =áddr;
+
+103 
+cuºít
+->
+m≠_«me
+ = 
+	`°rdup
+(
+m≠
+);
+
+104 
+cuºít
+->
+symbﬁ_«me
+ = 
+	`°rdup
+(
+symbﬁ
+);
+
+107  
+idx
+;
+
+108 
+	}
+}
+
+111 
+backåa˚_symbﬁ_t
+* 
+	$gëBackåa˚Symbﬁs
+(
+size_t
+ 
+cou¡
+)
+
+113  (
+backåa˚_symbﬁ_t
+*)
+	`ˇŒoc
+(
+cou¡
+, (backtrace_symbol_t));
+
+114 
+	}
+}
+
+116 
+	$‰ìBackåa˚Symbﬁs
+(
+backåa˚_symbﬁ_t
+* 
+symbﬁs
+)
+
+118 
+	`‰ì
+(
+symbﬁs
+);
+
+119 
+	}
+}
+
+	@backtrace.h
+
+1 #i‚de‡
+_BACK_TRACE_H
+
+
+2 
+	#_BACK_TRACE_H
+
+
+	)
+
+5 **
+	mùs
+;
+
+6 
+size_t
+ 
+	mn
+;
+
+7 } 
+	tbackåa˚_°ack_t
+;
+
+13 
+uöçå_t
+ 
+	mabsﬁuã_pc
+;
+
+14 
+uöçå_t
+ 
+	m°ack_t›
+;
+
+15 
+size_t
+ 
+	m°ack_size
+;
+
+16 } 
+	tbackåa˚_‰ame_t
+;
+
+22 c⁄° * 
+	maddr
+;
+
+24 c⁄° * 
+	mm≠_«me
+;
+
+25 c⁄° * 
+	msymbﬁ_«me
+;
+
+26 } 
+	tbackåa˚_symbﬁ_t
+;
+
+33 
+size_t
+ 
+backåa˚
+(
+backåa˚_°ack_t
+ *
+°ack
+, size_à
+max_dïth
+);
+
+41 
+backåa˚_symbﬁ_t
+* 
+gëBackåa˚Symbﬁs
+(
+size_t
+ 
+cou¡
+);
+
+46 
+‰ìBackåa˚Symbﬁs
+(
+backåa˚_symbﬁ_t
+* 
+symbﬁs
+);
+
+50 
+	mMAX_BACKTRACE_LINE_LENGTH
+ = 800,
+
+54 
+	mMAX_BACKTRACE_DEPTH
+ = 32,
+
+	@hlist.h
+
+1 #i‚de‡
+_KCOMPAT_HLIST_H
+
+
+2 
+	#_KCOMPAT_HLIST_H
+
+
+	)
+
+19 
+	~<°ddef.h
+>
+
+21 
+	scds_hli°_hód
+
+
+23 
+cds_hli°_node
+ *
+	m√xt
+;
+
+26 
+	scds_hli°_node
+
+
+28 
+cds_hli°_node
+ *
+	m√xt
+;
+
+29 
+cds_hli°_node
+ *
+	m¥ev
+;
+
+33 
+ölöe
+ 
+	$CDS_INIT_HLIST_HEAD
+(
+cds_hli°_hód
+ *
+±r
+)
+
+35 
+±r
+->
+√xt
+ = 
+NULL
+;
+
+36 
+	}
+}
+
+39 
+	#cds_hli°_íåy
+(
+±r
+, 
+ty≥
+, 
+membî
+) \
+
+40 ((
+ty≥
+ *Ë((*Ë(
+±r
+Ë- (Ë(&(—y≥ *Ë0)->
+membî
+)))
+
+	)
+
+43 
+	#cds_hli°_fú°_íåy
+(
+±r
+, 
+ty≥
+, 
+membî
+) \
+
+44 
+	`cds_li°_íåy
+((
+±r
+)->
+√xt
+, 
+ty≥
+, 
+membî
+)
+
+	)
+
+46 
+ölöe
+ 
+	$cds_hli°_em±y
+(
+cds_hli°_hód
+ *
+hód
+)
+
+48  !
+hód
+->
+√xt
+;
+
+49 
+	}
+}
+
+52 
+ölöe
+ 
+	$cds_hli°_add_hód
+ (
+cds_hli°_node
+ *
+√wp
+,
+
+53 
+cds_hli°_hód
+ *
+hód
+)
+
+55 i‡(
+hód
+->
+√xt
+)
+
+56 
+hód
+->
+√xt
+->
+¥ev
+ = 
+√wp
+;
+
+58 
+√wp
+->
+√xt
+ = 
+hód
+->next;
+
+59 
+√wp
+->
+¥ev
+ = (
+cds_hli°_node
+ *)
+hód
+;
+
+60 
+hód
+->
+√xt
+ = 
+√wp
+;
+
+61 
+	}
+}
+
+64 
+ölöe
+ 
+	$cds_hli°_dñ
+ (
+cds_hli°_node
+ *
+ñem
+)
+
+66 i‡(
+ñem
+->
+√xt
+)
+
+67 
+ñem
+->
+√xt
+->
+¥ev
+ =Élem->prev;
+
+69 
+ñem
+->
+¥ev
+->
+√xt
+ =Élem->next;
+
+70 
+	}
+}
+
+72 
+	#cds_hli°_f‹_óch_íåy
+(
+íåy
+, 
+pos
+, 
+hód
+, 
+membî
+) \
+
+73 
+pos
+ = (
+hód
+)->
+√xt
+, \
+
+74 
+íåy
+ = 
+	`cds_hli°_íåy
+(
+pos
+, 
+	`__ty≥of__
+(*íåy), 
+membî
+); \
+
+75 
+pos
+ !
+NULL
+; \
+
+76 
+pos
+ =Öos->
+√xt
+, \
+
+77 
+íåy
+ = 
+	`cds_hli°_íåy
+(
+pos
+, 
+	`__ty≥of__
+(*íåy), 
+membî
+))
+
+	)
+
+79 
+	#cds_hli°_f‹_óch_íåy_ß„
+(
+íåy
+, 
+pos
+, 
+p
+, 
+hód
+, 
+membî
+) \
+
+80 
+pos
+ = (
+hód
+)->
+√xt
+, \
+
+81 
+íåy
+ = 
+	`cds_hli°_íåy
+(
+pos
+, 
+	`__ty≥of__
+(*íåy), 
+membî
+); \
+
+82 (
+pos
+ !
+NULL
+Ë&& ({ 
+p
+ =Öos->
+√xt
+; 1;}); \
+
+83 
+pos
+ = 
+p
+, \
+
+84 
+íåy
+ = 
+	`cds_hli°_íåy
+(
+pos
+, 
+	`__ty≥of__
+(*íåy), 
+membî
+))
+
+	)
+
+	@jhash.h
+
+19 #i‡(
+deföed
+(
+__löux__
+Ë|| deföed(
+__CYGWIN__
+))
+
+20 
+	~<ídün.h
+>
+
+21 #ñi‡
+deföed
+(
+__FªeBSD__
+)
+
+22 
+	~<machöe/ídün.h
+>
+
+33 
+	#rŸ
+(
+x
+, 
+k
+Ë(((xË<< (k)Ë| ((xË>> (32 - (k))))
+
+	)
+
+35 
+	#mix
+(
+a
+, 
+b
+, 
+c
+) \
+
+37 
+a
+ -
+c
+;á ^
+	`rŸ
+(c, 4); c +
+b
+; \
+
+38 
+b
+ -
+a
+; b ^
+	`rŸ
+◊, 6);á +
+c
+; \
+
+39 
+c
+ -
+b
+; c ^
+	`rŸ
+(b, 8); b +
+a
+; \
+
+40 
+a
+ -
+c
+;á ^
+	`rŸ
+(c, 16); c +
+b
+; \
+
+41 
+b
+ -
+a
+; b ^
+	`rŸ
+◊, 19);á +
+c
+; \
+
+42 
+c
+ -
+b
+; c ^
+	`rŸ
+(b, 4); b +
+a
+; \
+
+43 } 0)
+
+	)
+
+45 
+	#föÆ
+(
+a
+, 
+b
+, 
+c
+) \
+
+47 
+c
+ ^
+b
+; c -
+	`rŸ
+(b, 14); \
+
+48 
+a
+ ^
+c
+;á -
+	`rŸ
+(c, 11); \
+
+49 
+b
+ ^
+a
+; b -
+	`rŸ
+(a, 25); \
+
+50 
+c
+ ^
+b
+; c -
+	`rŸ
+(b, 16); \
+
+51 
+a
+ ^
+c
+;á -
+	`rŸ
+(c, 4);\
+
+52 
+b
+ ^
+a
+; b -
+	`rŸ
+(a, 14); \
+
+53 
+c
+ ^
+b
+; c -
+	`rŸ
+(b, 24); \
+
+54 }
+
+	)
+
+56 #i‡(
+BYTE_ORDER
+ =
+LITTLE_ENDIAN
+)
+
+57 
+	#HASH_LITTLE_ENDIAN
+ 1
+
+	)
+
+59 
+	#HASH_LITTLE_ENDIAN
+ 0
+
+	)
+
+88 
+uöt32_t
+ 
+	$hashlôée
+(c⁄° *
+key
+, 
+size_t
+ 
+Àngth
+, 
+uöt32_t
+ 
+öôvÆ
+)
+
+90 
+uöt32_t
+ 
+a
+, 
+b
+, 
+c
+;
+
+92 c⁄° *
+±r
+;
+
+93 
+size_t
+ 
+i
+;
+
+94 } 
+u
+;
+
+97 
+a
+ = 
+b
+ = 
+c
+ = 0xdódbì‡+ ((
+uöt32_t
+)
+Àngth
+Ë+ 
+öôvÆ
+;
+
+99 
+u
+.
+±r
+ = 
+key
+;
+
+100 i‡(
+HASH_LITTLE_ENDIAN
+ && ((
+u
+.
+i
+ & 0x3) == 0)) {
+
+101 c⁄° 
+uöt32_t
+ *
+k
+ = (c⁄° uöt32_à*Ë
+key
+;
+
+104 
+Àngth
+ > 12) {
+
+105 
+a
+ +
+k
+[0];
+
+106 
+b
+ +
+k
+[1];
+
+107 
+c
+ +
+k
+[2];
+
+108 
+	`mix
+(
+a
+, 
+b
+, 
+c
+);
+
+109 
+Àngth
+ -= 12;
+
+110 
+k
+ += 3;
+
+123 #i‚de‡
+VALGRIND
+
+
+125 
+Àngth
+) {
+
+126 12: 
+c
++=
+k
+[2]; 
+b
++=k[1]; 
+a
++=k[0]; ;
+
+127 11: 
+c
++=
+k
+[2]&0xffffff; 
+b
++=k[1]; 
+a
++=k[0]; ;
+
+128 10: 
+c
++=
+k
+[2]&0xffff; 
+b
++=k[1]; 
+a
++=k[0]; ;
+
+129 9 : 
+c
++=
+k
+[2]&0xff; 
+b
++=k[1]; 
+a
++=k[0]; ;
+
+130 8 : 
+b
++=
+k
+[1]; 
+a
++=k[0]; ;
+
+131 7 : 
+b
++=
+k
+[1]&0xffffff; 
+a
++=k[0]; ;
+
+132 6 : 
+b
++=
+k
+[1]&0xffff; 
+a
++=k[0]; ;
+
+133 5 : 
+b
++=
+k
+[1]&0xff; 
+a
++=k[0]; ;
+
+134 4 : 
+a
++=
+k
+[0]; ;
+
+135 3 : 
+a
++=
+k
+[0]&0xffffff; ;
+
+136 2 : 
+a
++=
+k
+[0]&0xffff; ;
+
+137 1 : 
+a
++=
+k
+[0]&0xff; ;
+
+138 0 :  
+c
+;
+
+143 c⁄° 
+uöt8_t
+ *
+k8
+;
+
+145 
+k8
+ = (c⁄° 
+uöt8_t
+ *Ë
+k
+;
+
+146 
+Àngth
+) {
+
+147 12: 
+c
++=
+k
+[2]; 
+b
++=k[1]; 
+a
++=k[0]; ;
+
+148 11: 
+c
++=((
+uöt32_t
+Ë
+k8
+[10])<<16;
+
+149 10: 
+c
++=((
+uöt32_t
+Ë
+k8
+[9])<<8;
+
+150 9 : 
+c
++=
+k8
+[8];
+
+151 8 : 
+b
++=
+k
+[1]; 
+a
++=k[0]; ;
+
+152 7 : 
+b
++=((
+uöt32_t
+Ë
+k8
+[6])<<16;
+
+153 6 : 
+b
++=((
+uöt32_t
+Ë
+k8
+[5])<<8;
+
+154 5 : 
+b
++=
+k8
+[4];
+
+155 4 : 
+a
++=
+k
+[0]; ;
+
+156 3 : 
+a
++=((
+uöt32_t
+Ë
+k8
+[2])<<16;
+
+157 2 : 
+a
++=((
+uöt32_t
+Ë
+k8
+[1])<<8;
+
+158 1 : 
+a
++=
+k8
+[0]; ;
+
+159 0 :  
+c
+;
+
+164 } i‡(
+HASH_LITTLE_ENDIAN
+ && ((
+u
+.
+i
+ & 0x1) == 0)) {
+
+165 c⁄° 
+uöt16_t
+ *
+k
+ = (c⁄° uöt16_à*Ë
+key
+;
+
+166 c⁄° 
+uöt8_t
+ *
+k8
+;
+
+169 
+Àngth
+ > 12)
+
+171 
+a
+ +
+k
+[0] + (((
+uöt32_t
+) k[1])<<16);
+
+172 
+b
+ +
+k
+[2] + (((
+uöt32_t
+) k[3])<<16);
+
+173 
+c
+ +
+k
+[4] + (((
+uöt32_t
+) k[5])<<16);
+
+174 
+	`mix
+(
+a
+, 
+b
+, 
+c
+);
+
+175 
+Àngth
+ -= 12;
+
+176 
+k
+ += 6;
+
+180 
+k8
+ = (c⁄° 
+uöt8_t
+ *Ë
+k
+;
+
+181 
+Àngth
+)
+
+183 12: 
+c
++=
+k
+[4]+(((
+uöt32_t
+) k[5])<<16);
+
+184 
+b
++=
+k
+[2]+(((
+uöt32_t
+) k[3])<<16);
+
+185 
+a
++=
+k
+[0]+(((
+uöt32_t
+) k[1])<<16);
+
+187 11: 
+c
++=((
+uöt32_t
+Ë
+k8
+[10])<<16;
+
+188 10: 
+c
++=
+k
+[4];
+
+189 
+b
++=
+k
+[2]+(((
+uöt32_t
+) k[3])<<16);
+
+190 
+a
++=
+k
+[0]+(((
+uöt32_t
+) k[1])<<16);
+
+192 9 : 
+c
++=
+k8
+[8];
+
+193 8 : 
+b
++=
+k
+[2]+(((
+uöt32_t
+) k[3])<<16);
+
+194 
+a
++=
+k
+[0]+(((
+uöt32_t
+) k[1])<<16);
+
+196 7 : 
+b
++=((
+uöt32_t
+Ë
+k8
+[6])<<16;
+
+197 6 : 
+b
++=
+k
+[2];
+
+198 
+a
++=
+k
+[0]+(((
+uöt32_t
+) k[1])<<16);
+
+200 5 : 
+b
++=
+k8
+[4];
+
+201 4 : 
+a
++=
+k
+[0]+(((
+uöt32_t
+) k[1])<<16);
+
+203 3 : 
+a
++=((
+uöt32_t
+Ë
+k8
+[2])<<16;
+
+204 2 : 
+a
++=
+k
+[0];
+
+206 1 : 
+a
++=
+k8
+[0];
+
+208 0 :  
+c
+;
+
+212 c⁄° 
+uöt8_t
+ *
+k
+ = (c⁄° uöt8_à*)
+key
+;
+
+215 
+Àngth
+ > 12) {
+
+216 
+a
+ +
+k
+[0];
+
+217 
+a
+ +((
+uöt32_t
+Ë
+k
+[1])<<8;
+
+218 
+a
+ +((
+uöt32_t
+Ë
+k
+[2])<<16;
+
+219 
+a
+ +((
+uöt32_t
+Ë
+k
+[3])<<24;
+
+220 
+b
+ +
+k
+[4];
+
+221 
+b
+ +((
+uöt32_t
+Ë
+k
+[5])<<8;
+
+222 
+b
+ +((
+uöt32_t
+Ë
+k
+[6])<<16;
+
+223 
+b
+ +((
+uöt32_t
+Ë
+k
+[7])<<24;
+
+224 
+c
+ +
+k
+[8];
+
+225 
+c
+ +((
+uöt32_t
+Ë
+k
+[9])<<8;
+
+226 
+c
+ +((
+uöt32_t
+Ë
+k
+[10])<<16;
+
+227 
+c
+ +((
+uöt32_t
+Ë
+k
+[11])<<24;
+
+228 
+	`mix
+(
+a
+,
+b
+,
+c
+);
+
+229 
+Àngth
+ -= 12;
+
+230 
+k
+ += 12;
+
+234 
+Àngth
+) {
+
+235 12: 
+c
++=((
+uöt32_t
+Ë
+k
+[11])<<24;
+
+236 11: 
+c
++=((
+uöt32_t
+Ë
+k
+[10])<<16;
+
+237 10: 
+c
++=((
+uöt32_t
+Ë
+k
+[9])<<8;
+
+238 9 : 
+c
++=
+k
+[8];
+
+239 8 : 
+b
++=((
+uöt32_t
+Ë
+k
+[7])<<24;
+
+240 7 : 
+b
++=((
+uöt32_t
+Ë
+k
+[6])<<16;
+
+241 6 : 
+b
++=((
+uöt32_t
+Ë
+k
+[5])<<8;
+
+242 5 : 
+b
++=
+k
+[4];
+
+243 4 : 
+a
++=((
+uöt32_t
+Ë
+k
+[3])<<24;
+
+244 3 : 
+a
++=((
+uöt32_t
+Ë
+k
+[2])<<16;
+
+245 2 : 
+a
++=((
+uöt32_t
+Ë
+k
+[1])<<8;
+
+246 1 : 
+a
++=
+k
+[0];
+
+248 0 :  
+c
+;
+
+252 
+	`föÆ
+(
+a
+, 
+b
+, 
+c
+);
+
+253  
+c
+;
+
+254 
+	}
+}
+
+256 
+ölöe
+
+
+257 
+uöt32_t
+ 
+	$jhash
+(c⁄° *
+key
+, 
+size_t
+ 
+Àngth
+, 
+uöt32_t
+ 
+£ed
+)
+
+259  
+	`hashlôée
+(
+key
+, 
+Àngth
+, 
+£ed
+);
+
+260 
+	}
+}
+
+	@memleakfinder.c
+
+1 
+	~<°dio.h
+>
+
+2 
+	~<dlf˙.h
+>
+
+3 
+	~<±hªad.h
+>
+
+4 
+	~<sys/ty≥s.h
+>
+
+5 
+	~<sys/°©.h
+>
+
+6 
+	~<f˙é.h
+>
+
+7 
+	~<°rög.h
+>
+
+8 
+	~<î∫o.h
+>
+
+9 
+	~<™droid/log.h
+>
+
+10 
+	~"hli°.h
+"
+
+11 
+	~"jhash.h
+"
+
+12 
+	~"backåa˚.h
+"
+
+14 
+	#TAG
+ "Mem‹yLókFödî"
+
+	)
+
+16 
+	#STATIC_BUF_LEN
+ 8192
+
+	)
+
+17 
+	g°©ic_buf
+[
+STATIC_BUF_LEN
+];
+
+18 
+size_t
+ 
+	g°©ic_buf_Àn
+;
+
+20 
+±hªad_muãx_t
+ 
+	gmh_muãx
+ = 
+PTHREAD_MUTEX_INITIALIZER
+;
+
+21 
+±hªad_muãx_t
+ 
+	g°©ic_Æloc_muãx
+ = 
+PTHREAD_MUTEX_INITIALIZER
+;
+
+23 
+±hªad_key_t
+ 
+	gthªad_key
+;
+
+24 
+±hªad_⁄˚_t
+ 
+	göô_d⁄e
+ = 
+PTHREAD_ONCE_INIT
+;
+
+26 *(*
+	gmÆlo˝
+)(
+	gsize_t
+);
+
+27 (*
+‰ìp
+)(*);
+
+29 
+	#MH_HASH_BITS
+ 20
+
+	)
+
+30 
+	#MH_TABLE_SIZE
+ (1 << 
+MH_HASH_BITS
+)
+
+	)
+
+31 
+cds_hli°_hód
+ 
+mh_èbÀ
+[
+MH_TABLE_SIZE
+];
+
+32 
+size_t
+ 
+Ælo˚d_size
+;
+
+33 
+size_t
+ 
+‰ìd_size
+;
+
+34 
+size_t
+ 
+Ælo˚d_n
+;
+
+36 
+	#FILTER_SIZE
+ 16
+
+	)
+
+37 c⁄° * 
+c⁄fig_fûe
+ = "/data/local/tmp/memleakconfig.txt";
+
+38 *
+ˇŒî_fûãr
+[
+FILTER_SIZE
+];
+
+40 
+	smh_íåy
+ {
+
+41 
+cds_hli°_node
+ 
+hli°
+;
+
+42 *
+±r
+;
+
+43 
+size_t
+ 
+Æloc_size
+;
+
+44 
+backåa˚_°ack_t
+ 
+°ack
+;
+
+47 
+mh_íåy
+ *
+	$gë_mh
+(c⁄° *
+±r
+)
+
+49 
+cds_hli°_hód
+ *
+hód
+;
+
+50 
+cds_hli°_node
+ *
+node
+;
+
+51 
+mh_íåy
+ *
+e
+;
+
+52 
+uöt32_t
+ 
+hash
+;
+
+54 
+hash
+ = 
+	`jhash
+(&
+±r
+, (ptr), 0);
+
+55 
+hód
+ = &
+mh_èbÀ
+[
+hash
+ & (
+MH_TABLE_SIZE
+ - 1)];
+
+56 
+	`cds_hli°_f‹_óch_íåy
+(
+e
+, 
+node
+, 
+hód
+, 
+hli°
+) {
+
+57 i‡(
+±r
+ =
+e
+->ptr)
+
+58  
+e
+;
+
+60  
+NULL
+;
+
+61 
+	}
+}
+
+63 
+	$add_mh
+(*
+±r
+, 
+size_t
+ 
+Æloc_size
+, 
+backåa˚_°ack_t
+ *
+°ack
+)
+
+65 
+cds_hli°_hód
+ *
+hód
+;
+
+66 
+cds_hli°_node
+ *
+node
+;
+
+67 
+mh_íåy
+ *
+e
+;
+
+68 
+uöt32_t
+ 
+hash
+;
+
+69 
+Dl_öfo
+ 
+öfo
+;
+
+71 i‡(!
+±r
+)
+
+74 
+hash
+ = 
+	`jhash
+(&
+±r
+, (ptr), 0);
+
+75 
+hód
+ = &
+mh_èbÀ
+[
+hash
+ & (
+MH_TABLE_SIZE
+ - 1)];
+
+76 
+	`cds_hli°_f‹_óch_íåy
+(
+e
+, 
+node
+, 
+hód
+, 
+hli°
+) {
+
+77 i‡(
+±r
+ =
+e
+->ptr) {
+
+83 
+e
+ = (
+mh_íåy
+ *)
+	`mÆlo˝
+((*e));
+
+84 
+e
+->
+±r
+ =Ötr;
+
+85 
+e
+->
+Æloc_size
+ =álloc_size;
+
+86 
+e
+->
+°ack
+ = *stack;
+
+88 
+	`cds_hli°_add_hód
+(&
+e
+->
+hli°
+, 
+hód
+);
+
+90 
+Ælo˚d_size
+ +
+Æloc_size
+;
+
+91 ++
+Ælo˚d_n
+;
+
+92 
+	}
+}
+
+94 
+	$dñ_mh
+(*
+±r
+)
+
+96 
+mh_íåy
+ *
+e
+;
+
+98 i‡(!
+±r
+)
+
+101 
+e
+ = 
+	`gë_mh
+(
+±r
+);
+
+102 i‡(!
+e
+) {
+
+106 
+	`cds_hli°_dñ
+(&
+e
+->
+hli°
+);
+
+107 
+	`‰ìp
+(
+e
+);
+
+109 
+‰ìd_size
+ +
+e
+->
+Æloc_size
+;
+
+110 --
+Ælo˚d_n
+;
+
+111 
+	}
+}
+
+113 
+	$thªad_key_öô
+()
+
+115 
+	`±hªad_key_¸óã
+(&
+thªad_key
+, 
+NULL
+);
+
+116 
+	}
+}
+
+118 
+__©åibuã__
+((
+c⁄°ru˘‹
+))
+
+119 
+	$öô
+()
+
+121 
+	`±hªad_⁄˚
+(&
+öô_d⁄e
+, 
+thªad_key_öô
+);
+
+123 
+mÆlo˝
+ = (*(*Ë(
+size_t
+)Ë
+	`dlsym
+ (
+RTLD_NEXT
+, "malloc");
+
+124 
+‰ìp
+ = ((*Ë(*)Ë
+	`dlsym
+ (
+RTLD_NEXT
+, "free");
+
+125 
+	}
+}
+
+127 *
+	$°©ic_Æloc
+(
+size_t
+ 
+n
+, size_à
+size
+)
+
+129 *
+ªçå
+ = 
+NULL
+;
+
+131 
+	`±hªad_muãx_lock
+(&
+°©ic_Æloc_muãx
+);
+
+133 i‡(
+n
+ * 
+size
+ > (
+°©ic_buf
+Ë- 
+°©ic_buf_Àn
+) {
+
+134 
+	`±hªad_muãx_u∆ock
+(&
+°©ic_Æloc_muãx
+);
+
+135  
+NULL
+;
+
+138 
+ªçå
+ = 
+°©ic_buf
+ + 
+°©ic_buf_Àn
+;
+
+139 
+°©ic_buf_Àn
+ +
+n
+ * 
+size
+;
+
+141 
+	`±hªad_muãx_u∆ock
+(&
+°©ic_Æloc_muãx
+);
+
+143  
+ªçå
+;
+
+144 
+	}
+}
+
+146 *
+	$mÆloc
+(
+size_t
+ 
+size
+)
+
+148 *
+ªsu…
+;
+
+150 i‡(
+mÆlo˝
+ =
+NULL
+) {
+
+151 
+	`öô
+();
+
+152 
+ªsu…
+ = 
+	`°©ic_Æloc
+(1, 
+size
+);
+
+153  
+ªsu…
+;
+
+156 
+ªsu…
+ = 
+	`mÆlo˝
+(
+size
+);
+
+158 i‡(
+	`±hªad_gë•ecific
+(
+thªad_key
+)) {
+
+159  
+ªsu…
+;
+
+162 
+	`±hªad_£t•ecific
+(
+thªad_key
+, (*)0x01);
+
+167 
+backåa˚_°ack_t
+ 
+°k
+;
+
+168 
+n
+ = 
+	`backåa˚
+(&
+°k
+, 10);
+
+170 
+	`±hªad_muãx_lock
+(&
+mh_muãx
+);
+
+171 i‡(
+n
+ > 0) {
+
+172 
+	`add_mh
+(
+ªsu…
+, 
+size
+, &
+°k
+);
+
+174 
+	`±hªad_muãx_u∆ock
+(&
+mh_muãx
+);
+
+176 
+	`±hªad_£t•ecific
+(
+thªad_key
+, 
+NULL
+);
+
+178  
+ªsu…
+;
+
+179 
+	}
+}
+
+181 
+	$‰ì
+(*
+±r
+)
+
+183 i‡(
+±r
+ >(*Ë
+°©ic_buf
+ &&Öå < (*)(°©ic_bu‡+ 
+STATIC_BUF_LEN
+)) {
+
+186 
+	`‰ìp
+(
+±r
+);
+
+189 
+	`±hªad_muãx_lock
+(&
+mh_muãx
+);
+
+190 
+	`dñ_mh
+(
+±r
+);
+
+191 
+	`±hªad_muãx_u∆ock
+(&
+mh_muãx
+);
+
+192 
+	}
+}
+
+194 
+	$ªad_c⁄fig
+()
+
+196 
+FILE
+ *
+Â
+ = 
+NULL
+;
+
+197 
+löe_buf
+[256] = {0};
+
+198 
+i
+ = 0;
+
+201 
+i
+ = 0; i < 
+FILTER_SIZE
+; ++i) {
+
+202 i‡(
+ˇŒî_fûãr
+[
+i
+]) {
+
+203 
+	`‰ì
+(
+ˇŒî_fûãr
+[
+i
+]);
+
+204 
+ˇŒî_fûãr
+[
+i
+] = 
+NULL
+;
+
+208 i‡((
+Â
+ = 
+	`f›í
+(
+c⁄fig_fûe
+, "r")Ë=
+NULL
+) {
+
+209 
+	`__™droid_log_¥öt
+(
+ANDROID_LOG_DEBUG
+, "MemoryLeakFinder",
+
+210 "O≥¿c⁄fig fûê%†Áûed", 
+c⁄fig_fûe
+);
+
+214 
+i
+ = 0;
+
+215 !
+	`„of
+(
+Â
+)) {
+
+216 
+löe_buf
+[0] = '\0';
+
+217 
+	`fsˇnf
+(
+Â
+, "%s", 
+löe_buf
+);
+
+219 
+	`__™droid_log_¥öt
+(
+ANDROID_LOG_DEBUG
+, "MemoryLeakFinder",
+
+220 "ªad c⁄figêlöê%s,Üí %d", 
+löe_buf
+, 
+	`°æí
+(line_buf));
+
+222 i‡(
+	`°æí
+(
+löe_buf
+) > 0) {
+
+223 
+ˇŒî_fûãr
+[
+i
+++] = 
+	`°rdup
+(
+löe_buf
+);
+
+225 i‡(
+i
+ =
+FILTER_SIZE
+) {
+
+230 
+	`f˛o£
+(
+Â
+);
+
+231 
+	}
+}
+
+233 
+	$m©ch_°ack
+(
+mh_íåy
+ *
+e
+)
+
+235 
+Dl_öfo
+ 
+öfo
+;
+
+236 *
+fûe_«me
+ = 
+NULL
+;
+
+237 i‡(!
+e
+)  0;
+
+239 
+i
+ = 0; i < 
+e
+->
+°ack
+.
+n
+; ++i) {
+
+240 
+	`dœddr
+(
+e
+->
+°ack
+.
+ùs
+[
+i
+], &
+öfo
+);
+
+241 
+j
+ = 0; j < 
+FILTER_SIZE
+; ++j) {
+
+242 i‡(
+ˇŒî_fûãr
+[
+j
+] && 
+öfo
+.
+dli_‚ame
+ && 
+	`°r°r
+(info.dli_fname, caller_filter[j])) {
+
+249 
+	}
+}
+
+251 
+	$¥öt_Àaks
+()
+
+253 
+size_t
+ 
+i
+ = 0;
+
+254 
+size_t
+ 
+˙t
+ = 0;
+
+255 
+j
+ = 0;
+
+256 
+logbuf
+[256] = {0};
+
+258 
+	`±hªad_£t•ecific
+(
+thªad_key
+, (*)0x01);
+
+260 
+	`±hªad_muãx_lock
+(&
+mh_muãx
+);
+
+262 
+	`ªad_c⁄fig
+();
+
+264 
+	`__™droid_log_¥öt
+(
+ANDROID_LOG_DEBUG
+, "MemoryLeakFinder",
+
+266 
+Ælo˚d_n
+, 
+Ælo˚d_size
+, 
+‰ìd_size
+,álloced_size - freed_size);
+
+268 
+i
+ = 0; i < 
+MH_TABLE_SIZE
+; ++i) {
+
+269 
+cds_hli°_hód
+ *
+hód
+;
+
+270 
+cds_hli°_node
+ *
+node
+;
+
+271 
+mh_íåy
+ *
+e
+;
+
+273 
+hód
+ = &
+mh_èbÀ
+[
+i
+];
+
+276 
+	`cds_hli°_f‹_óch_íåy
+(
+e
+, 
+node
+, 
+hód
+, 
+hli°
+) {
+
+277 
+Dl_öfo
+ 
+öfo
+;
+
+278 *
+ˇŒî_symbﬁ
+ = 
+NULL
+;
+
+279 *
+fûe_«me
+ = 
+NULL
+;
+
+281 i‡(!
+	`m©ch_°ack
+(
+e
+)) {
+
+285 
+i
+ = 1; i < 
+e
+->
+°ack
+.
+n
+; ++i) {
+
+286 
+	`dœddr
+(
+e
+->
+°ack
+.
+ùs
+[
+i
+], &
+öfo
+);
+
+287 i‡(
+öfo
+.
+dli_¢ame
+) {
+
+288 
+ˇŒî_symbﬁ
+ = 
+	`°rdup
+(
+öfo
+.
+dli_¢ame
+);
+
+290 i‡(
+öfo
+.
+dli_‚ame
+) {
+
+291 
+fûe_«me
+ = 
+	`°rdup
+(
+öfo
+.
+dli_‚ame
+);
+
+295 
+	`__™droid_log_¥öt
+(
+ANDROID_LOG_DEBUG
+, "MemoryLeakFinder",
+
+297 
+i
+, 
+fûe_«me
+ =
+NULL
+ ? "Unknown" : file_name,
+
+298 
+ˇŒî_symbﬁ
+ =
+NULL
+ ? "Unknown" : caller_symbol);
+
+300 i‡(
+ˇŒî_symbﬁ
+) {
+
+301 
+	`‰ìp
+(
+ˇŒî_symbﬁ
+);
+
+302 
+ˇŒî_symbﬁ
+ = 
+NULL
+;
+
+304 i‡(
+fûe_«me
+) {
+
+305 
+	`‰ìp
+(
+fûe_«me
+);
+
+306 
+fûe_«me
+ = 
+NULL
+;
+
+315 
+	`__™droid_log_¥öt
+(
+ANDROID_LOG_DEBUG
+, "MemoryLeakFinder",
+
+318 
+Ælo˚d_n
+, 
+˙t
+);
+
+320 
+Áûed
+:
+
+321 
+	`±hªad_muãx_u∆ock
+(&
+mh_muãx
+);
+
+323 
+	`±hªad_£t•ecific
+(
+thªad_key
+, 
+NULL
+);
+
+324 
+	}
+}
+
+	@stackfilter.c
+
+1 
+	~<°dio.h
+>
+
+	@stats.c
+
+1 
+	~<°dio.h
+>
+
+2 
+	~<sig«l.h
+>
+
+3 
+	~<™droid/log.h
+>
+
+5 
+	#STAT_SIGNAL
+ 
+SIGUSR2
+
+
+	)
+
+7 
+¥öt_Àaks
+();
+
+9 
+	$sigh™dÀr
+(
+signo
+, 
+sigöfo_t
+ *
+sigöfo
+, *
+c⁄ãxt
+)
+
+12 
+	`¥öt_Àaks
+();
+
+13 
+	}
+}
+
+15 
+__©åibuã__
+((
+c⁄°ru˘‹
+))
+
+16 
+	$°©s_öô
+()
+
+20 
+siga˘i⁄
+ 
+a˘
+;
+
+21 
+a˘
+.
+ß_siga˘i⁄
+ = 
+sigh™dÀr
+;
+
+22 
+a˘
+.
+ß_Êags
+ = 
+SA_SIGINFO
+ | 
+SA_RESTART
+;
+
+23 
+	`sigem±y£t
+(&
+a˘
+.
+ß_mask
+);
+
+24 
+	`siga˘i⁄
+(
+STAT_SIGNAL
+, &
+a˘
+, 
+NULL
+);
+
+25 
+	}
+}
+
+	@
+1
+.
+0
+7
+78
+backtrace.c
+backtrace.h
+hlist.h
+jhash.h
+memleakfinder.c
+stackfilter.c
+stats.c
